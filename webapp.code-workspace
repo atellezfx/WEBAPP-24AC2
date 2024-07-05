@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "path": "backend"
+    },
+    {
+      "path": "frontend"
+    },
+    {
+      "path": "docs"
+    }
+  ],
+  "settings": {},
+  "extensions": {
+    "recommendations": [
+      "loiane.angular-extension-pack",
+      "VisualStudioExptTeam.vscodeintellicode",
+      "VisualStudioExptTeam.intellicode-api-usage-examples",
+      "ryannaddy.laravel-artisan",
+      "amiralizadeh9480.laravel-extra-intellisense",
+      "onecentlin.laravel5-snippets",
+      "xdebug.php-pack",
+      "emmanuelbeziat.vscode-great-icons"
+    ]
+  }
+}
