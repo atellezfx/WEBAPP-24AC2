@@ -1,1 +1,59 @@
-<p>mascota works!</p>
+<div class="card h-100 w-100 border-0 shadow">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{mascota.fotoUrl}}" class="img-fluid rounded-start h-100">
+    </div>
+    <div class="col-md-8">
+
+      <div class="row mx-1 mt-2 text-primary">
+        <div class="col text-start">
+          <h5 class="card-title">{{mascota.nombre}}</h5>
+        </div>
+        <div class="col text-end">
+          @switch(mascota.tipo) {
+            @case(1) {
+              <i class="fa-solid fa-dog"></i>
+            }
+            @case(2) {
+              <i class="fa-solid fa-cat"></i>
+            }
+            @default {
+              <i class="fa-solid fa-paw"></i>
+            }
+          }
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="card-text">
+          <div class="row">
+            <div class="col text-black">Fecha Nac.:</div>
+            <div class="col text-end text-muted">{{mascota.fechaNac | date:'dd/MM/yyyy'}}</div>
+          </div>
+          <div class="row">
+            <div class="col text-black">Raza:</div>
+            <div class="col text-end text-muted">{{mascota.raza}}</div>
+          </div>
+          <div class="row">
+            <div class="col text-black">Color:</div>
+            <div class="col text-end text-muted">{{mascota.color}}</div>
+          </div>
+          <div class="row">
+            <div class="col text-black">Género:</div>
+            <div class="col text-end text-muted">{{mascota.genero}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-1 mb-2">
+        <div class="col text-start">
+          <a class="fa-solid fa-trash-can" (click)="confirmarEliminar($event)"></a>
+        </div>
+        <div class="col text-end">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

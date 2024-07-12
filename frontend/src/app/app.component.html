@@ -1,12 +1,20 @@
-<div class="row">
-  <div class="col"><app-agregar></app-agregar></div>
-  <div class="col"><app-catalogo></app-catalogo></div>
-</div>
-<div class="row">
-  <div class="col"><app-editar></app-editar></div>
-  <div class="col"><app-eliminar></app-eliminar></div>
-</div>
-<div class="row">
-  <div class="col"><app-login></app-login></div>
-  <div class="col"><app-mascota></app-mascota></div>
+@if( true ) {
+  <!--
+    TODO: Implementar la lógica para visualizar la barra de navegación
+  -->
+  <nav class="navbar sticky-top navbar-expand-lg bg-primary navbar-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand ms-2 h1 mb-0">
+        <i class="fa-solid fa-paw"></i> {{title}}
+      </span>
+      <div class="navbar-nav align-items-end">
+        <button class="btn btn-primary me-4" routerLink="/nuevo">Agregar</button>
+        <button class="btn btn-secondary" (click)="cerrarSesion()">Cerrar Sesión</button>
+      </div>
+    </div>
+  </nav>
+}
+
+<div class="container my-4">
+  <router-outlet></router-outlet>
 </div>
