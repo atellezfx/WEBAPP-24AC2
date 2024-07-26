@@ -1,4 +1,19 @@
 <div class="container">
+  <form role="search" class="d-flex mb-4">
+    <div class="input-group">
+      <span class="input-group-text">Propietario</span>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        [(ngModel)]="modelo"
+        [ngbTypeahead]="search"
+			  [inputFormatter]="formatter"
+			  [resultFormatter]="formatter"
+			  [editable]="false"
+        (selectItem)="actualizaMascotas($event)">
+    </div>
+  </form>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     @for( m of mascotas; track $index ) {
       <div class="col">
