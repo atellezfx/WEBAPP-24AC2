@@ -9,7 +9,7 @@ use App\Models\Tipo;
 class TipoSeeder extends Seeder {
 
     public function run(): void {
-        Tipo::factory()->create([ 'id' => 1, 'descripcion' => 'perro', ]);
-        Tipo::factory()->create([ 'id' => 2, 'descripcion' => 'gato', ]);
+        Tipo::factory()->create([ 'id' => 1, 'descripcion' => 'perro' ]);
+        Tipo::factory()->create([ 'id' => 2, 'descripcion' => 'gato' ]);
     }
 }

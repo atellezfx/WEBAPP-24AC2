@@ -35,4 +35,8 @@ class MascotaController extends Controller {
         return response()->noContent();
     }
 
+    public function catalogo(int $propietario) {
+        return Mascota::query()->where('propietario', $propietario)->get();
+    }
+
 }
