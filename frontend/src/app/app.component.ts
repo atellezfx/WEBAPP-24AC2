@@ -22,7 +22,7 @@ export class AppComponent {
   constructor( public authSvc:AuthService ) { }
 
   public cerrarSesion(): void {
-    // TODO: Implmentar lógica de cerrar sesión
+    this.authSvc.logout();
   }
 
 }

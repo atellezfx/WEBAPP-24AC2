@@ -1,5 +1,5 @@
 export interface Mascota {
-  id:number,
+  id?:number,
   nombre:string,
   propietario:number,
   fechaNac:Date,

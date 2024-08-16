@@ -59,7 +59,12 @@ export class CatalogoComponent implements OnInit {
 		);
 
   public eliminar( mascota:Mascota|null ):void {
-    // TODO: Implementar lógica de quitar la tarjeta de la mascota eliminada
+    if( mascota ) {
+      const indice = this.mascotas.indexOf(mascota);
+      this.mascotaSvc.eliminar( mascota ).subscribe(
+        datos => this.mascotas.splice(indice,1)
+      );
+    }
   }
 
 }

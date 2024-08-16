@@ -1,6 +1,6 @@
 <div class="card w-100 border-0 shadow">
   <div class="card-body">
-    <form ngNativeValidate>
+    <form ngNativeValidate [formGroup]="formulario">
       <input type="hidden" formControlName="id">
       <input type="hidden" formControlName="propId">
       <div class="row mb-4">

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService, CADENA_TOKEN, FORMATO_TOKEN, USUARIO_ACTUAL } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Usuario } from '../../models/usuario';
+import { Token, Status } from '../../models/token';
 
 @Component({
   selector: 'app-login',
@@ -35,9 +36,16 @@ export class LoginComponent {
     }
   }
 
-  private procesarRespuesta(datos:any, usr:Usuario): void {
-    // TODO: Implementar guardar datos de usuario y token en localStorage
-    this.router.navigateByUrl('/catalogo');
+  private procesarRespuesta(datos:Token|Status, usr:Usuario): void {
+    if( 'access_token' in datos ) {
+      localStorage.setItem( USUARIO_ACTUAL, usr.email );
+      localStorage.setItem( CADENA_TOKEN, datos.access_token );
+      localStorage.setItem( FORMATO_TOKEN, datos.token_type );
+      this.router.navigateByUrl('/catalogo');
+    } else {
+      localStorage.clear();
+      this.mensajeError = datos.message;
+    }
   }
 
 

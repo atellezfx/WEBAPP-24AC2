@@ -4,6 +4,19 @@ img {
   object-fit: cover;
 }
 
+.card {
+  cursor: pointer;
+}
+
 .card-text {
   font-size: small;
+}
+
+.btn-icon {
+  cursor: pointer;
+  color: lightgray;
+}
+
+.btn-icon:hover {
+  color: rgb(217, 0, 0);
 }

@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Propietario } from '../models/propietario';
-import { Observable, of } from 'rxjs';
-import { Mascota } from '../models/mascota';
-import { mascotasPrueba, propietariosPrueba } from '../util/datos-prueba';
+import { Observable } from 'rxjs';
+import { environment as env } from '../environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PropietarioService {
 
-  // TODO: Implmementar la URL del sevidor (backend)
+  private readonly servidor = `${env.urlServidor}/v1/propietarios`;
 
-  constructor() { }
+  constructor( private http:HttpClient ) { }
 
   public obtener( id:number ): Observable<Propietario> {
-    const resultado = propietariosPrueba.filter( p => p.id == id );
-    return of( resultado[0] );
+    // ej. http://localhost:8000/api/v1/propietarios/1
+    return this.http.get<Propietario>(`${this.servidor}/${id}`);
   }
 
-  public lista( ): Observable<Propietario[]> {
-    return of( propietariosPrueba );
+  public lista(): Observable<Propietario[]> {
+    return this.http.get<Propietario[]>(this.servidor);
   }
 
 }

@@ -1,4 +1,4 @@
-<div class="card h-100 w-100 border-0 shadow">
+<div class="card h-100 w-100 border-0 shadow" (click)="editar()" >
   <div class="row g-0">
     <div class="col-md-4">
       <img src="{{mascota.fotoUrl}}" class="img-fluid rounded-start h-100">
@@ -46,11 +46,8 @@
       </div>
 
       <div class="row mx-1 mb-2">
-        <div class="col text-start">
-          <a class="fa-solid fa-trash-can" (click)="confirmarEliminar($event)"></a>
-        </div>
         <div class="col text-end">
-          <i class="fa-solid fa-pen-to-square"></i>
+          <a class="fa-solid fa-trash-can btn-icon" (click)="confirmarEliminar($event)"></a>
         </div>
       </div>
 
